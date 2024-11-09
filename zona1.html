@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilo/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Sketch&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <title>MAPA 1</title>
+</head>
+<body style="background-image: url(img/fondo2.jpg);" id="fondo">
+    
+    <div class="intro">
+        <h1>La Granja Abandonada</h1>
+        <p>La aventura comienza en una granja abandonada, un lugar que antaño florecía y ahora yace en silencio, ocultando secretos antiguos. En medio de campos secos y herramientas oxidadas, los personajes encuentran un diario polvoriento que relata la historia de la Esencia de la Vida, un poder vital robado por un espíritu oscuro. Para recuperar pistas sobre este misterio, deberán ayudar a un viejo granjero a limpiar la tierra y plantar nuevas semillas. Como muestra de gratitud, el granjero les entrega un mapa que apunta hacia la mina, donde podrían hallar la clave para restaurar la vida de este mundo.</p>
+    </div>
+
+    <div class="contenedor-boton">
+        <input type="button" value="Pregunta al Viejo Granjero" onclick="mostrar('dialogo1');">
+    </div>
+
+    <div class="contenedor-boton">
+        <div class="sub-contenedor">
+            <h1>DIALOGO</h1>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="1 ¿Qué pasó aquí?" onclick="mostrar('dialogo2');">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="2 Buscamos la Esencia de la Vida" onclick="mostrar('dialogo3');">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="3 ¿Tienes un mapa?" onclick="mostrar('dialogo4');">
+            </div>
+        </div>
+    </div>
+
+
+    <!--Diferentes dialogos-->
+    <div class="contenedorgeneral-conversacion">
+        <div class="contenedor-conversacion" id="dialogo1" style="display: none;">
+            <p>¡Oh, vaya! ¡Visitantes! Hace mucho que no veo rostros nuevos por aquí. ¿Qué los trae a esta vieja y polvorienta granja?</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo2" style="display: none;">
+            <p>Era próspera, hasta que un espíritu oscuro se llevó la Esencia de la Vida.</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero">
+        </div>
+
+        <div class="contenedor-conversacion" id="dialogo3" style="display: none">
+            <p>Esa es una tarea difícil. Pero tal vez pueda ayudarlos.</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero">
+        </div>
+
+        <div class="contenedor-conversacion" id="dialogo4" style="display: none;">
+            <p>Sí, ayúdenme a limpiar la granja y plantar semillas. A cambio, te daré un mapa. Primero deberas de coger el rastrillo que se encuentra en la granja</p>
+            <p>Mision 1: Encuentra el rastrillo</p>
+            <p>Mision 2: Limpiar el campo y encuentra el mapa</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero">
+        </div>
+    </div>
+
+    <!--TESOROS MAPA-->
+    <div class="contenedorGenralTesoro">
+        <div class="contenedor-tesoro" id="regalo" style="display: none;">
+            <p>Toma un regalo seguro que tienes hambre</p>
+            <img src="img/tortilla.png">
+        </div>
+
+        <div class="contenedor-tesoro" id="herramienta" style="display: none;">
+            <p>¡Has encontrado el rastrillo! Ya puedes limpiar el campo</p>
+            <img src="img/hazada.png">
+        </div>
+
+        <div class="contenedor-tesoro" id="mapa" style="display: none;">
+            <p>Has encontrado el mapa. Puedes continuar tu aventura!</p>
+            <img src="img/mapa.png"><br>
+            <div class="contenedor-boton">
+                <a href="zona2.html" id="boton-zona">Continua..</a>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-imagenes">
+        <img src="img/granja.jpg" usemap="#image-map" id="granja">
+    </div>
+    <map name="image-map">
+        <area target="_parent" alt="Viejo Granjero" title="Viejo Granjero" href="#" coords="390,222,18" shape="circle" onclick="mostrar('regalo');">
+        <area target="_parent" alt="granja" title="granja" href="#" coords="313,187,416,187,420,146,417,115,385,92,351,90,311,127,312,152,311,172,315,180" shape="poly" onclick="mostrar('herramienta');">
+        <area target="_parent" alt="campo" title="campo" href="#" coords="232,233,296,301" shape="rect" onclick="mostrar('mapa');">
+    </map>
+    <script type="text/javascript">
+        function mostrar(id){
+            document.getElementById('dialogo1').style.display='none';
+            document.getElementById('dialogo2').style.display='none';
+            document.getElementById('dialogo3').style.display='none';
+            document.getElementById('dialogo4').style.display='none';
+            document.getElementById('regalo').style.display='none';
+            document.getElementById('herramienta').style.display='none'; 
+            document.getElementById('mapa').style.display='none'; 
+
+            document.getElementById(id).style.display='block';
+        }
+    </script>
+</body>
+</html>

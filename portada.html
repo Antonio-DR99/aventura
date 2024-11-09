@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilo/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Sketch&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body style="background-image: url(img/fondo.jpg);" id="fondo">
+    <div class="intro">
+        <h1>STARDEW VALLEY</h1>
+        <h2>Historia Principal:  La Aventura del Valle Escondido:</h2>
+        <p>En el tranquilo Valle Escondido, la magia de la naturaleza ha empezado a desvanecerse. Los aldeanos han notado que sus cultivos no crecen tan bien como antes, y los animales están inquietos. Un antiguo mito habla de la Esencia de la Vida, un objeto mágico que puede restaurar la vitalidad del valle. Los personajes son elegidos por los ancianos del pueblo para embarcarse en una aventura para recuperar esta esencia.</p>
+    </div>
+    <div class="fondoSeleccion">
+        <div class="seleccionPersonaje">
+            <form class="formulario">
+                <h1>Selección Personaje</h1>
+                <input type="text" placeholder="Introduce tu usuario:">
+                <input type="email" placeholder="Introduce tu correo:">
+                <input type="password" placeholder="Introduce tu contraseña:">
+                <input type="button" value="Registrar" onclick="registro();" id="boton">
+                <div id="registro"></div>
+                <div class="contenedoImagen">
+                    <img src="img/personaje.png" id="personaje">
+                    <img src="img/personaje2.png" id="personaje">
+                    <img src="img/personaje3.png" id="personaje">
+                    <img src="img/personaje4.png" id="personaje">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="contenedor-boton">
+        <a href="zona1.html" id="boton-zona">Comenzar Aventura</a>
+    </div>
+
+    <script type="text/javascript">
+
+        function registro(){
+            document.getElementById('registro').innerHTML="¡TE HAS REGISTRADO CON EXITO!";
+        }
+
+    </script>
+</body>
+
+</html>

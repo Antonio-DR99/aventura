@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilo/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Sketch&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <title>MAPA 2</title>
+</head>
+<body style="background-image: url(img/fondo3.jpg);" id="fondo">
+    <div class="intro">
+        <h1>La Mina Escondida</h1>
+        <h2>La Mina Escondida</h2>
+        <p>Después de recibir el mapa del Viejo Granjero, los personajes se dirigen a una mina antigua y oscura, cubierta de telarañas y sombras. Al entrar, sienten una presencia extraña que parece observarlos. En lo profundo de la mina, encuentran inscripciones en las paredes que relatan la historia del espíritu oscuro que robó la Esencia de la Vida. Sin embargo, también se encuentran con criaturas de las sombras que custodian la entrada a la cámara principal.</p>
+    </div>
+
+    <!--DIFERENTES OPCCIONES-->
+    <div class="contenedor-boton">
+        <input type="button" value="Pregunta al Explorador de la mina" onclick="mostrar('dialogo1');">
+    </div>
+    <div class="contenedor-boton">
+        <div class="sub-contenedor">
+            <h1>DIALOGO</h1>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="1 ¿Buscamos la Esencia de la Vida?" onclick="mostrar('dialogo2');">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="2 ¿Qué hay en esta mina?" onclick="mostrar('dialogo3');">
+            </div>
+
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="3 ¿Podemos ver esas inscripciones?" onclick="mostrar('dialogo4');">
+            </div>
+        </div>
+    </div>
+
+    <!--Diferentes dialogos-->
+    <div class="contenedorgeneral-conversacion">
+        <div class="contenedor-conversacion" id="dialogo1" style="display: none;">
+            <p>¡Hola, aventureros! No muchos se atreven a entrar en esta mina. ¿Qué los trae por aquí?</p>
+            <img src="img/explorador.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo2" style="display: none;">
+            <p>Esa esencia es un misterio. Se dice que hay un artefacto en la cámara principal que puede ayudarles.</p>
+            <img src="img/explorador.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo3" style="display: none;">
+            <p>Esta mina es un lugar lleno de misterios y peligros. En sus profundidades, encontrarán inscripciones que cuentan la trágica historia del espíritu oscuro que robó la Esencia de la Vida. También se rumorea que hay tesoros olvidados, pero no se dejen engañar; las sombras que rondan aquí están siempre al acecho</p>
+            <img src="img/explorador.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo4" style="display: none">
+            <p>Claro, las inscripciones están en la cabaña más profunda de la mina. Sin embargo, estén atentos; las criaturas de las sombras merodean por aquí. Si quieren acercarse, será mejor que se preparen.</p>
+            <img src="img/explorador.png" id="viejoGranjero">
+        </div>
+    </div>
+
+    <!--TESOROS EN EL MAPA-->
+    <div class="contenedorGenralTesoro">
+        <div class="contenedor-tesoro" id="regalo" style="display: none;">
+            <p>¡HAS CONSEGUIDO UNA ESPADA!</p>
+            <img src="img/espada.png">
+        </div>
+    </div>
+    <div class="contenedorGenralTesoro">
+        <div class="contenedor-tesoro" id="enemigo" style="display: none;">
+            <p>AHHHHHH</p>
+            <img src="img/enemigo.png">
+        </div>
+    </div>
+    <div class="contenedorGenralTesoro">
+        <div class="contenedor-tesoro" id="enigma" style="display: none;">
+            <p>En las sombras me encuentro, en la luz me disuelvo. Soy un viaje y un destino, pero nunca un hogar.¿Qué soy?</p>
+            <input type="text" id="acertijo">
+            <input type="button" value="resolver" onclick="acertijo();">
+        </div>
+    </div>
+    <div  id="continuar" style="display: none;">
+        <a href="zona3.html" id="boton-zona">Continua..</a> 
+    </div>
+
+    <div class="contenedor-imagenes">
+        <img src="img/mina.jpg" usemap="#image-map">     
+    </div>
+
+    <map name="image-map">
+        <area target="_parent" alt="enemigo" title="enemigo" href="#" coords="435,210,34" shape="circle" onclick="mostrar('enemigo');" >
+        <area target="_parent" alt="tesoro" title="tesoro" href="#" coords="516,104,589,236" shape="rect" onclick="mostrar('regalo');">
+        <area target="_parent" alt="enigma" title="enigma" href="#" coords="113,142,150,109,201,155,201,209,179,244,129,242,105,213,103,180" shape="poly" onclick="mostrar('enigma');" >
+    </map>
+
+
+
+    <script type="text/javascript">
+            function mostrar(id){
+                document.getElementById('dialogo1').style.display='none';
+                document.getElementById('dialogo2').style.display='none';
+                document.getElementById('dialogo3').style.display='none';
+                document.getElementById('dialogo4').style.display='none';
+                document.getElementById('regalo').style.display='none';
+                document.getElementById('enemigo').style.display='none';
+                document.getElementById('enigma').style.display='none';
+
+                document.getElementById(id).style.display='block';
+
+            }
+
+            function acertijo(){
+                var texto; 
+
+                texto=document.getElementById('acertijo').value.toLowerCase(); 
+                if (texto=='niebla'){
+                    document.getElementById('continuar').style.display='block';
+                    
+                }else{
+                    alert('Incorrecto, prueba otra vez!');
+                }
+            }
+    </script>
+</body>
+</html>

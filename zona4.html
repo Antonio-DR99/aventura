@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilo/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Sketch&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <title>MAPA 4</title>
+</head>
+<body style="background-image: url(img/fondo.jpg);" id="fondo">
+
+    <!--introduccion a la zona-->
+    <div class="intro">
+        <h1>El Destino de la Esenciaa</h1>
+        <h2>El Poder de una Decisión</h2>
+        <p>Después de un arduo viaje y un escape peligroso, finalmente tienes la Esencia de la Vida en tus manos. Su poder es inmenso, irradiando una energía cálida que parece vibrar con vida propia. Sientes el peso de tu decisión: ¿devolverás la esencia al pueblo para restaurar la prosperidad y la paz, o la conservarás para ti, conociendo la tentación de su poder? Elige con cuidado, pues tu decisión determinará el destino del mundo… y el tuyo.</p>
+    </div>
+
+    <!--opciones-->
+    <div class="contenedor-boton">
+        <div class="sub-contenedor">
+            <h1>DIALOGO</h1>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="1 Hablar con el viejo granjero" onclick="mostrar('dialogo1');">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="2 ¿Por qué debería darla al pueblo?" onclick="mostrar('dialogo2');">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="3 ¿Por qué debería renunciar a un poder tan… tentador?" onclick="mostrar('dialogo3');">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="4 ¿Ser un héroe? Hmm… " onclick="mostrar('dialogo4');">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="4 Encuentra el ayuntamiento " onclick="mostrar('dialogo5');">
+            </div>
+        </div>
+    </div>
+
+    <!--dialogo-->
+    <div class="contenedorgeneral-conversacion">
+        <div class="contenedor-conversacion" id="dialogo1" style="display: none;">
+            <p>Ah, joven aventurero… veo la determinación en tus ojos. La Esencia de la Vida… es un poder grandioso, sí, pero su verdadero valor no está en quien la posee, sino en lo que puede hacer por todos</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo2" style="display: none;">
+            <p>Lo sé, lo sé… No todos serían capaces de atravesar la oscuridad de la mina, de enfrentarse a las sombras. Pero esa esencia, joven, es mucho más que un tesoro. En las manos adecuadas, es vida para nuestra tierra, alimento para nuestros hijos y esperanza para todos nosotros.</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo3" style="display: none;">
+            <p>Ah, ese es el dilema, ¿no? La esencia puede darte poder, sí… pero todo poder tiene su precio. Ya una vez fue arrebatada, y la tierra sufrió por ello. Si decides devolverla, serás recordado como un héroe que restauró la paz y la abundancia. ¿No es esa la mayor recompensa que uno puede recibir?</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo4" style="display: none;">
+            <p>A veces, el camino correcto no es el más fácil, ni el más tentador. Te ofrezco un trato: devuélvenos la Esencia de la Vida, y en cada rincón del pueblo verás la gratitud de quienes se han quedado atrás. ¿No es ese el verdadero poder? La paz, el agradecimiento, y el honor de haber sido el salvador de todos.</p>
+            <img src="img/viejo granjero.png" id="viejoGranjero"><br>
+        </div>
+        <div class="contenedor-conversacion" id="dialogo5" style="display: none;">
+            <p>ESPERA NO TE SERA TAN SENCILLO PRIMERO TENDRAS QUE ADIVINAR DONDE DEJAR LA ESENCIA:</p>
+            <p>Buscas un lugar donde el misterio se guarda,Su fachada es púrpura, su esencia resguarda.No es hogar de reyes ni de gente sencilla,pero en su sombra oculta la clave brilla.</p>
+            <img src="img/villano.png" id="viejoGranjero"><br>
+        </div>
+        <div class="contenedor-conversacionEleccion" id="dialogo6" style="display: none;">
+            <p>Has entrado al ayuntamiento. ¿Qué decision escoges? </p>
+            <p> 1. "ENTREGAR" / 2."SALIR"</p>
+            <input type="text" placeholder="Escribe tu eleccion" id="palabra"> 
+            <input type="button" value="Eleccion" onclick="eleccion();">
+            <img src="img/yo.png" id="viejoGranjero"><br>
+        </div>
+    </div>
+
+    <!--Eleccion final-->
+    <div class="contenedorEleccion">
+        <div class="eleccion1" style="display: none;" id="entregar">
+            <p>Con una última mirada, entregas la Esencia al altar del pueblo. La energía se expande, llenando la tierra de vida y esperanza. Los aldeanos te rodean con gratitud, y sientes la paz de haber restaurado su hogar.</p>
+            <a href="portada.html" id="gameOver">GAME OVER</a>
+            <img src="img/yo.png" id="viejoGranjero">
+        </div>
+        <div class="eleccion2" style="display: none;" id="salir">
+            <p>Decides quedarte con la Esencia. Su poder fluye en ti, y mientras te alejas, la tierra a tu paso se marchita. Ahora eres el portador de la oscuridad, y el precio del poder se hace evidente.</p>
+            <a href="portada.html" id="gameOver">GAME OVER</a>
+            <img src="img/malo.png" id="viejoGranjero">
+        </div>
+    </div>
+
+
+
+
+    <!--Zonas del mapa-->
+    <div class="contenedorGenralTesoro">
+        <div class="contenedor-tesoro" id="tesoro" style="display: none;">
+            <p>¡Has pescado una anchoa!</p>
+            <img src="img/pescado.png">
+        </div>
+    </div>
+
+
+
+    <!--mapa interactivo-->
+    <div class="contenedor-imagenes">    
+        <img src="img/pueblo.jpg" usemap="#image-map">
+    </div>
+        <map name="image-map">
+            <area target="_parent" alt="casa" title="casa" href="#" coords="99,56,176,118" shape="rect" onclick="mostrar('dialogo6')">
+            <area target="_parent" alt="tesoro" title="tesoro" href="#" coords="280,380,38" shape="circle" onclick="mostrar('tesoro')">
+            <area target="_parent" alt="salida" title="salida" href="#" coords="276,0,301,60" shape="rect">
+        </map>
+
+
+
+    <script type="text/javascript">
+
+        function mostrar(id){
+            document.getElementById('dialogo1').style.display='none';
+            document.getElementById('dialogo2').style.display='none';
+            document.getElementById('dialogo3').style.display='none';
+            document.getElementById('dialogo4').style.display='none';
+            document.getElementById('tesoro').style.display='none';
+            document.getElementById('dialogo5').style.display='none';
+            document.getElementById('dialogo6').style.display='none';
+
+            document.getElementById(id).style.display='block';
+        }
+
+        function eleccion(){
+            var texto; 
+            document.getElementById('entregar').style.display='none'
+            texto=document.getElementById('palabra').value.toLowerCase();
+            
+            switch (texto){
+                case 'entregar': 
+                    document.getElementById('entregar').style.display='block';
+                    break;
+                case 'salir': 
+                    document.getElementById('salir').style.display='block';
+            }
+
+
+        }
+
+    </script>
+
+
+</body>
+</html>

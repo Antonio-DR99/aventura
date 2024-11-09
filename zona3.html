@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hoja estilo/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Londrina+Sketch&family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <title>MAPA 3</title>
+</head>
+<body style="background-image: url(img/fondo4.png);" id="fondo">
+    <div class="intro3">
+        <h1>La Mina Escondida</h1>
+        <h2>El Santuario Olvidado</h2>
+        <p>Al profundizar en la mina, los personajes encuentran una puerta antigua cubierta de musgo y enredaderas. Al abrirla, se encuentran en un Santuario Olvidado, un lugar sagrado lleno de estatuas desgastadas por el tiempo y un aire de melancolía. En el centro, hay un altar con símbolos que relatan la historia de la Esencia de la Vida y el oscuro espíritu que la robó. El ambiente está cargado de magia antigua, y el eco de susurros resuena entre las paredes.</p>
+    </div>
+
+    <!--DIFERENTES OPCCIONES-->
+
+    <div class="contenedor-boton">
+        <div class="sub-contenedor3">
+            <h1>DIALOGO</h1>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="1 Habla con la exploradora">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="2 ¿Qué historia se oculta detrás de este santuario?" onclick="mostrar('dialogo2')">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="3 ¿Cómo podemos recuperar la Esencia de la Vida?" onclick="mostrar('dialogo3')">
+            </div>
+            <div class="contenedor-boton-respuesta">
+                <input type="button" value="4 ¿Qué peligros nos esperan en nuestra búsqueda?" onclick="mostrar('dialogo4')">
+            </div>
+            
+
+            
+        </div>
+    </div>
+
+
+    <!--Dialogos-->
+    <div class="contenedorgeneral-conversacion">
+        <div class="contenedor-conversacion" id="dialogo1" style="display: none;">
+            <p>¡Hola, aventureros! No muchos se atreven a entrar en esta mina. ¿Qué los trae por aquí?</p>
+            <img src="img/exploradorcueva.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo2" style="display: none;">
+            <p>Este santuario fue una vez un lugar de adoración a la Esencia de la Vida. Aquí, los antiguos sacerdotes ofrecían rituales para mantener el equilibrio en el mundo. Sin embargo, un espíritu oscuro fue atraído por su poder y lo robó, sumiendo a la tierra en la tristeza.</p>
+            <img src="img/exploradorcueva.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo3" style="display: none;">
+            <p>La recuperación de la Esencia requiere valor y sabiduría. Deberán enfrentarse al espíritu oscuro y resolver los misterios que dejó atrás. Pero primero, deben comprender la historia que esta tierra cuenta y lo que deben aprender de ella.</p>
+            <img src="img/exploradorcueva.png" id="viejoGranjero">
+        </div>
+        <div class="contenedor-conversacion" id="dialogo4" style="display: none;">
+            <p>Los peligros son muchos. Las sombras que habitan aquí son solo el comienzo. El espíritu oscuro es astuto y manipulador, y su esencia está enraizada en el dolor de esta tierra. Deben estar preparados para enfrentarse no solo a sus criaturas, sino también a sus propios miedos.</p>
+            <img src="img/exploradorcueva.png" id="viejoGranjero">
+        </div>
+    </div>
+
+    <!--TESOROS MAPA-->
+    <div class="contenedorGenralTesoro">
+        <div class="contenedor-tesoro" id="tesoro" style="display: none;">
+            <p>¡Has conseguido un libro!</p>
+            <img src="img/libro.png">
+        </div>
+        <div class="contenedor-tesoro" id="enigma" style="display: none;">
+            <p>En el oscuro corazón de la caverna, un caldero burbujeante se alza, lleno de secretos y magia. Para descubrir la esencia de los hechizos que guarda, debes resolver el acertijo que encierra:</p>
+            <img src="img/libro.png">
+        </div>
+        <div class="contenedor-tesoro" id="caldero" style="display: none;">
+            <p>Soy un objeto sin fin, mi forma es redonda, dentro de mí, la magia se inunda.Puedo ser grande, puedo ser pequeño,con agua hirviendo, desato mi sueño.¿Qué soy yo?</p>
+            <input type="text" id="acertijo">
+            <input type="button" value="Resolver" onclick="acertijo();">
+        </div><br>
+        <div class="logro" id="continuar" style="display: none;">
+            <p>¡Has obtenido la esencia de la vida! Sal de la cueva</p>
+            <img src="img/esenciadelavida.png">
+            <a href="zona4.html" id="boton-zona">Salir...</a> 
+        </div>
+    </div>
+
+
+    <div class="contenedor-imagenes">
+        <img src="img/santuario.jpg" usemap="#image-map">
+    </div>
+
+    <map name="image-map">
+        <area target="_parent" alt="personaje" title="personaje" href="#" coords="378,227,32" shape="circle" onclick="mostrar('dialogo1');">
+        <area target="_parent" alt="enigma" title="enigma" href="#" coords="304,333,27" shape="circle" onclick="mostrar('enigma');">
+        <area target="_parent" alt="tesoro" title="tesoro" href="#" coords="78,242,130,322" shape="rect" onclick="mostrar('tesoro');">
+        <area target="_parent" alt="caldero" title="caldero" href="#" coords="237,369,42" shape="circle" onclick="mostrar('caldero');" >
+    </map>
+    <script type="text/javascript">
+
+        function mostrar(id){
+            document.getElementById('dialogo1').style.display='none'; 
+            document.getElementById('dialogo2').style.display='none'; 
+            document.getElementById('dialogo3').style.display='none'; 
+            document.getElementById('dialogo4').style.display='none'; 
+            document.getElementById('tesoro').style.display='none'; 
+            document.getElementById('enigma').style.display='none'; 
+            document.getElementById('caldero').style.display='none'; 
+            
+
+            document.getElementById(id).style.display='block'; 
+        }
+
+        function acertijo(){
+            var palabra; 
+            palabra=document.getElementById('acertijo').value.toLowerCase(); 
+            if(palabra=='caldero'){
+            document.getElementById('continuar').style.display='block'; 
+            }else{
+                alert('Incorrecto, prueba otra vez!')
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
